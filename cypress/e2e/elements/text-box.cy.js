@@ -2,7 +2,6 @@
 import { HomePage } from '../../support/pages/homePage'
 import { TextBoxPage } from '../../support/pages/textBoxPage';
 
-const { faker } = require('@faker-js/faker');
 
 describe('text box', () => {
   const homePage = new HomePage();

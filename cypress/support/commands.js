@@ -25,11 +25,23 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('cClick', (locator) => {
-  cy.contains(locator).click();
+  cy.contains(locator).click({ force: true });
+});
+
+Cypress.Commands.add('gDinamicClick', (locator) => {
+  cy.get(locator).eq(1).click();
 });
 
 Cypress.Commands.add('gClick', (locator) => {
   cy.get(locator).click();
+});
+
+Cypress.Commands.add('gDblClick', (locator) => {
+  cy.get(locator).dblclick();
+});
+
+Cypress.Commands.add('gRgtClick', (locator) => {
+  cy.get(locator).rightclick();
 });
 
 Cypress.Commands.add('gType', (locator, text) => {

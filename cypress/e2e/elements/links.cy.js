@@ -3,7 +3,7 @@
 import { HomePage } from "../../support/pages/homePage";
 import { LinksPage } from "../../support/pages/linksPage";
 
-describe('links', () => {
+describe('links(en links se verifica que redireccionan al lugar correcto)', () => {
     const homePage = new HomePage();
     const linksPage = new LinksPage();
 

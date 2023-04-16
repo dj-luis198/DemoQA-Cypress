@@ -36,7 +36,7 @@ Cypress.Commands.add('gDinamicClick', (locator) => {
 });
 
 Cypress.Commands.add('gClick', (locator) => {
-  cy.get(locator).click();
+  cy.get(locator).click({ force: true });
 });
 
 Cypress.Commands.add('gDblClick', (locator) => {
@@ -53,4 +53,8 @@ Cypress.Commands.add('gType', (locator, text) => {
 
 Cypress.Commands.add('gCheck', (locator) => {
   cy.get(locator).check({ force: true });
+});
+
+Cypress.Commands.add('gSelect', (locator,text) => {
+  cy.get(locator).Select(text);
 });

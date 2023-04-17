@@ -4,6 +4,11 @@ export class HomePage {
         this.elementsCard = 'Elements';
         this.textBoxSpan = 'Text Box';
         this.formCard = 'Forms';
+        this.AlertsFrameWindowsCard = 'Alerts, Frame & Windows';
+    };
+
+    clickAlertsFrameWindowsCard() {
+        cy.cClick(this.AlertsFrameWindowsCard);
     };
 
     clickElements() {

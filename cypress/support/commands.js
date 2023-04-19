@@ -1,4 +1,5 @@
 import 'cypress-file-upload';
+import 'cypress-iframe';
 require('cypress-downloadfile/lib/downloadFileCommand');
 require('cy-verify-downloads').addCustomCommand();
 // ***********************************************
@@ -55,6 +56,19 @@ Cypress.Commands.add('gCheck', (locator) => {
   cy.get(locator).check({ force: true });
 });
 
-Cypress.Commands.add('gSelect', (locator,text) => {
+Cypress.Commands.add('gSelect', (locator, text) => {
   cy.get(locator).Select(text);
 });
+
+Cypress.Commands.add('Iframe', (iframe, locator) => {
+  cy.frameLoaded(iframe);
+  //como hay muchos ifames en la pagina tengo que especificar cual es
+  return cy.iframe(iframe).find(locator);
+});
+
+Cypress.Commands.add('getIframeBody', (iframe, locator) => {
+  return cy
+    .get(iframe)
+    .its('0.contentDocument.body').should('not.be.empty')
+    .then(cy.wrap)
+})

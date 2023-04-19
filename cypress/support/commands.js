@@ -66,9 +66,19 @@ Cypress.Commands.add('Iframe', (iframe, locator) => {
   return cy.iframe(iframe).find(locator);
 });
 
-Cypress.Commands.add('getIframeBody', (iframe, locator) => {
+Cypress.Commands.add('getIframeBody', (iframe) => {
   return cy
     .get(iframe)
     .its('0.contentDocument.body').should('not.be.empty')
     .then(cy.wrap)
-})
+});
+
+Cypress.Commands.add('getIframeChildrenBody', (iframe, iframe2) => {
+  return cy
+    .get(iframe)
+    .its('0.contentDocument.body').should('not.be.empty')
+    .then(cy.wrap)
+    .find(iframe2)
+    .its('0.contentDocument.body').should('not.be.empty')
+    .then(cy.wrap);
+});

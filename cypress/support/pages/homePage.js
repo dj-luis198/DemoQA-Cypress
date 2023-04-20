@@ -5,6 +5,11 @@ export class HomePage {
         this.textBoxSpan = 'Text Box';
         this.formCard = 'Forms';
         this.AlertsFrameWindowsCard = 'Alerts, Frame & Windows';
+        this.accordianCard = 'Widgets';
+    };
+
+    clickAccordianCard() {
+        cy.cClick(this.accordianCard);
     };
 
     clickAlertsFrameWindowsCard() {

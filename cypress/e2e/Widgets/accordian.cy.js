@@ -7,7 +7,7 @@ describe('Accordian', () => {
 
     beforeEach(() => {
         cy.visit('/');
-        homePage.clickAccordianCard();
+        homePage.clickWidgetsCard();
         accordianPage.clickAccordian();
     });
 

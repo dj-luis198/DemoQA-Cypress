@@ -28,6 +28,11 @@ require('cy-verify-downloads').addCustomCommand();
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+
+Cypress.Commands.add('gClear', (locator) => {
+  cy.get(locator).clear();
+});
+
 Cypress.Commands.add('cClick', (locator) => {
   cy.contains(locator).click({ force: true });
 });
@@ -57,7 +62,7 @@ Cypress.Commands.add('gCheck', (locator) => {
 });
 
 Cypress.Commands.add('gSelect', (locator, text) => {
-  cy.get(locator).Select(text);
+  cy.get(locator).select(text);
 });
 
 Cypress.Commands.add('Iframe', (iframe, locator) => {
@@ -81,4 +86,16 @@ Cypress.Commands.add('getIframeChildrenBody', (iframe, iframe2) => {
     .find(iframe2)
     .its('0.contentDocument.body').should('not.be.empty')
     .then(cy.wrap);
+});
+
+Cypress.Commands.add('randomDate', () => {
+  let date = new Date(+(new Date()) - Math.floor(Math.random() * 500000000000));
+  let d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+  date = [month, day, year].join('/');
+  return date;
 });

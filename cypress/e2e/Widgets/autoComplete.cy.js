@@ -9,7 +9,7 @@ describe('AutoComplete', () => {
 
     beforeEach(() => {
         cy.visit('/');
-        homePage.clickAccordianCard();
+        homePage.clickWidgetsCard();
         autoCompletePage.clickAutoComplete();
     });
 

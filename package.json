@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "cypress-downloadfile": "^1.2.3",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-real-events": "^1.7.6"
   }
 }

@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=PpzKIRVkn_0&list=PLMZdod-kiMhKiRztQX_rng7EfcI5OteMR&index=15
+
 ///<reference types="cypress" />
 const { faker } = require('@faker-js/faker');
 import { HomePage } from "../../support/pages/homePage";

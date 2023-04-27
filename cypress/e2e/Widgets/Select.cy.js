@@ -29,4 +29,38 @@ describe('Select Menu', () => {
         selectPage.selectToOption(singleOp.index);
         selectPage.returnSingleValue().should('have.text', singleOp.value);
     });
+
+    it('Old Style Select Menu (select option por text)', () => {
+        selectPage.selectOldSelectMenu('Blue').should('have.value', '1');
+        selectPage.returnOptionValue('1').invoke('prop', 'selected').should('eq', true);
+    });
+
+    it('Old Style Select Menu (select option por value)', () => {
+        selectPage.selectOldSelectMenuValue('1')
+            .find('option:selected').as('selectV')
+            .invoke('text')
+            .should('eq', 'Blue');
+        cy.get('@selectV').invoke('val').should('eq', '1');
+    });
+
+    it('Select One (es igual al primero)', () => {
+        selectPage.clickSelectTitle();
+        selectPage.returnMenuOptTitle().should('be.visible');
+        selectPage.selectToOptionTitle('0-0');
+        selectPage.returnSingleValueTitle().should('have.text', 'Dr.');
+    });
+
+    it('Multiselect drop down (sin select)', () => {
+        selectPage.clickMultiselectDropDown();
+        selectPage.returnOptionsDropDown().should('be.visible');
+        selectPage.selectToOptionDropDown('3');
+        selectPage.selectToOptionDropDown('1');
+        selectPage.returnselectOptionDropDown().invoke('text').should('eq', ['Red', 'Blue'].join(''));
+    });
+
+    it('Standard multi select (con select)', () => {
+        selectPage.selectoptionsCars(['Volvo', 'Audi']);
+        selectPage.returnOptionsSelected().invoke('text').should('eq', ['Volvo', 'Audi'].join(''))
+
+    });
 });

@@ -6,6 +6,11 @@ export class HomePage {
         this.formCard = 'Forms';
         this.AlertsFrameWindowsCard = 'Alerts, Frame & Windows';
         this.widgetsCard = 'Widgets';
+        this.bookStoreButton='Book Store Application';
+    };
+
+    clickBookStore(){
+        cy.cClick(this.bookStoreButton);
     };
 
     clickWidgetsCard() {

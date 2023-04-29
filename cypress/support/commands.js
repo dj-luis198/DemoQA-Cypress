@@ -99,3 +99,27 @@ Cypress.Commands.add('randomDate', () => {
   date = [month, day, year].join('/');
   return date;
 });
+
+Cypress.Commands.add('findInPage', (index, value,totalPages,nextButton,titlesLinks) => {
+  let found = false;
+  cy.get(totalPages).as('pages');
+  cy.get('@pages').its('text').then(len => {
+    if (index >= len) {
+      return false;
+    } else {
+      cy.get(nextButton).eq(1).click({ force: true });
+    }
+    cy.get(titlesLinks).each((itemTitle) => {
+      const itemText = itemTitle.text();
+      if (itemText === value) {
+        found = true;
+        cy.wrap(itemTitle).click({ force: true });
+        return false;
+      }
+    }).then(() => {
+      if (!found) {
+        cy.findInPage(index++, value);
+      }
+    })
+  })
+});

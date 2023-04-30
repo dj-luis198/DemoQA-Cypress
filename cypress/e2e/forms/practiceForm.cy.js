@@ -16,7 +16,7 @@ describe('Practice form', () => {
     let dayDateBirth = faker.datatype.number({ min: 1, max: 28 });
     let yearDateBirth = faker.datatype.number({ min: 1970, max: 2002 });
     let address = faker.address.secondaryAddress();
-    let hobbis = faker.datatype.number({ min: 1, max: 3 });
+    let hobbis = faker.helpers.arrayElement(['0', '1', '2']);
 
     before(() => {
         cy.fixture('autocomplete').then(data => {
@@ -37,7 +37,7 @@ describe('Practice form', () => {
         practiceFormPage.selectGender(gender);
         practiceFormPage.typeUserNumber(movil);
         practiceFormPage.SelectDateOfBirth(dayDateBirth, monthDateBirth, yearDateBirth);
-        practiceFormPage.typeAutocomplete(auto.subjects1.text);
+        practiceFormPage.typeAutocomplete(auto.subjects1.txt);
         practiceFormPage.returnAutocomplete().each(function ($ele, index, list) {
             if ($ele.text().includes('Arts')) {
                 cy.wrap($ele).click();

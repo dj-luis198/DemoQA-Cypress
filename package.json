@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open --e2e -b chrome"
+    "test": "npx cypress open --e2e -b chrome",
+    "test-bsa-chrome": "npx cypress run --headless --e2e -b chrome --spec 'cypress/e2e/Book-Store-Application'"
   },
   "keywords": [],
   "author": "",

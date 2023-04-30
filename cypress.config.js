@@ -13,6 +13,10 @@ module.exports = defineConfig({
     },
 
     baseUrl: 'https://demoqa.com',
+    
+    screenshotOnRunFailure: false,
+    video: false,
+    
   },
   chromeWebSecurity: false,
   watchForFileChanges: false,

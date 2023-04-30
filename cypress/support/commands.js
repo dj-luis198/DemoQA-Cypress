@@ -54,7 +54,7 @@ Cypress.Commands.add('gRgtClick', (locator) => {
 });
 
 Cypress.Commands.add('gType', (locator, text) => {
-  cy.get(locator).type(text);
+  cy.get(locator).clear().type(text);
 });
 
 Cypress.Commands.add('gCheck', (locator) => {

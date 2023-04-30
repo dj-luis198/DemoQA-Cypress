@@ -14,7 +14,7 @@ export class PracticeFormPage {
         this.hobbiesCheckbox = 'input[type="checkbox"]';
         this.uploadPicture = '#uploadPicture';
         this.currentAddressInput = '#currentAddress';
-        this.state = '#state';
+        this.state = '#state>[class$="control"]';
         this.stateOrCityOptions = '[class$="option"]';
         this.city = '#city';
         this.submitButton = '#submit';

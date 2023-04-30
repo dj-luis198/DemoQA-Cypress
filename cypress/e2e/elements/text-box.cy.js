@@ -1,4 +1,4 @@
-
+const { faker } = require('@faker-js/faker');
 import { HomePage } from '../../support/pages/homePage'
 import { TextBoxPage } from '../../support/pages/textBoxPage';
 

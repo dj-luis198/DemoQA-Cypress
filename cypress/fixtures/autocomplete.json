@@ -1,16 +1,14 @@
-[
     {
         "subjects1": {
-            "text": "a",
+            "txt": "a",
             "result": 4
         },
         "subjects2": {
-            "text": "hindi",
+            "txt": "hindi",
             "result": 1
         },
         "subjects3": {
-            "text": "co",
+            "txt": "co",
             "result": 4
         }
     }
-]

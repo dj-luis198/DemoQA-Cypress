@@ -1,10 +1,21 @@
+//https://ajv.js.org/guide/getting-started.html
+
 ///<reference types="cypress" />
+const Ajv = require('ajv');
+import { Schema } from "../../support/schemas/createPOST";
+import { SchemaToken } from "../../support/schemas/tokenPOST";
+import { SchemaUser } from "../../support/schemas/userGET";
 
 describe('Account API', () => {
+    const ajv = new Ajv();
+    const schema = Schema;
+    const schemaToken = SchemaToken;
+    const schemaUser = SchemaUser;
+
     let userID;
     let token;
-    let userName="danielfarias";
-    let userpass="Az2528831040@";
+    let userName = "danielfarias6";
+    let userpass = "Az2528831040@";
 
     it('Post - Create user', () => {
         cy.request({
@@ -16,7 +27,10 @@ describe('Account API', () => {
             },
         }).then((response) => {
             expect(response.status).is.eq(201);
-            userID=response.body.userID;
+            const validate = ajv.compile(schema);
+            const valid = validate(response.body);
+            expect(valid,'schema valid?').to.be.true;
+            userID = response.body.userID;
         });
     });
 
@@ -30,7 +44,10 @@ describe('Account API', () => {
             },
         }).then((response) => {
             expect(response.status).is.eq(200);
-            token=response.body.token;
+            const validate = ajv.compile(schemaToken);
+            const valid = validate(response.body);
+            expect(valid,'schema valid?').to.be.true;
+            token = response.body.token;
         });
     });
 
@@ -39,7 +56,7 @@ describe('Account API', () => {
         cy.request({
             method: 'POST',
             url: '/Account/v1/Authorized',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: {
@@ -49,37 +66,38 @@ describe('Account API', () => {
         }).then((response) => {
             expect(response.status).is.eq(200);
             expect(response.body).is.eq(true);
-            
+
         });
     });
 
     it('Get - User', () => {
-       cy.request({
-        method: 'GET',
-        url: `/Account/v1/User/${userID}`,
-        headers:{
-            'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json'
-        },
-    })
-         .then((response) => {
-          expect(response.status).to.have.eq(200);
-          // assertion code here
-       });
+        cy.request({
+            method: 'GET',
+            url: `/Account/v1/User/${userID}`,
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        })
+            .then((response) => {
+                expect(response.status).to.have.eq(200);
+                const validate = ajv.compile(schemaUser);
+                const valid = validate(response.body);
+                expect(valid,'schema valid?').to.be.true;
+            });
     });
 
     it('DELETE - User', () => {
         cy.request({
-         method: 'DELETE',
-         url: `/Account/v1/User/${userID}`,
-         headers:{
-             'Authorization':`Bearer ${token}`,
-             'Content-Type': 'application/json'
-         },
-     })
-          .then((response) => {
-           expect(response.status).to.have.eq(204);
-           // assertion code here
-        });
-     });
+            method: 'DELETE',
+            url: `/Account/v1/User/${userID}`,
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        })
+            .then((response) => {
+                expect(response.status).to.have.eq(204);
+            });
+    });
 });

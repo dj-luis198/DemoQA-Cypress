@@ -125,5 +125,5 @@ describe('check box', () => {
         checkBoxPage.returnAllSuccessText().invoke('text').then(res => {
             expect(res.toLowerCase()).to.eql(sinDoc);
         });
-    })
-})
+    });
+});

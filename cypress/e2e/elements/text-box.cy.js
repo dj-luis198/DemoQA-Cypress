@@ -11,7 +11,7 @@ describe('text box', () => {
     cy.visit('/');
     homePage.clickElements();
     homePage.clickTextBox();
-  })
+  });
 
   it('test case description', () => {
     const fullName = faker.name.fullName();
@@ -37,5 +37,5 @@ describe('text box', () => {
         expect(res.trim()).is.eql(`Permananet Address :${permanentAddress}`);
       });
 
-  })
-})
+  });
+});

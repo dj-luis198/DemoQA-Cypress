@@ -68,7 +68,7 @@ export class PracticeFormPage {
     };
 
     typeAutocomplete(text) {
-        cy.gType(this.autocompleteInput, text);
+        cy.get(this.autocompleteInput).type(text);
     };
 
     returnAutocomplete() {
@@ -76,7 +76,7 @@ export class PracticeFormPage {
     };
 
     checkHobbies(hobbie) {
-        cy.get(this.hobbiesCheckbox).check(hobbie, { force: true });
+        cy.get(`input[type="checkbox"][id="hobbies-checkbox-${hobbie}"]`).check({ force: true });
     };
 
     returnUploadPicture() {

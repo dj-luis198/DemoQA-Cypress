@@ -18,8 +18,8 @@ export class ToolTipsPage{
     };
 
     returnToolTipField(){
-        //cy.get(this.toolTipTextField).trigger('mouseover');
-        cy.get(this.toolTipTextField).invoke('show');
+        cy.get(this.toolTipTextField).trigger('mouseover');
+        //cy.get(this.toolTipTextField).invoke('show');
         return cy.get(this.textFieldToolTip);
     };
 };

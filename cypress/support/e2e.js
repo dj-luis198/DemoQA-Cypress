@@ -14,8 +14,9 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import 'cypress-plugin-api';
 import "cypress-real-events";
-import './commands'
+import './commands';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from

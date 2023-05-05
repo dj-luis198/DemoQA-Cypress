@@ -16,7 +16,7 @@ describe('Practice form', () => {
     let dayDateBirth = faker.datatype.number({ min: 1, max: 28 });
     let yearDateBirth = faker.datatype.number({ min: 1970, max: 2002 });
     let address = faker.address.secondaryAddress();
-    let hobbis = faker.helpers.arrayElement(['0', '1', '2']);
+    let hobbis = faker.helpers.arrayElement(['1', '2', '3']);
 
     before(() => {
         cy.fixture('autocomplete').then(data => {

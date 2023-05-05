@@ -123,3 +123,14 @@ Cypress.Commands.add('findInPage', (index, value,totalPages,nextButton,titlesLin
     })
   })
 });
+
+Cypress.Commands.add('register', (user, pass) => {
+  cy.request({
+    method: 'POST',
+    url: '/Account/v1/User',
+    body: {
+      userName: user,
+      password:pass
+    },
+  });
+});

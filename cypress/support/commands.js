@@ -100,7 +100,7 @@ Cypress.Commands.add('randomDate', () => {
   return date;
 });
 
-Cypress.Commands.add('findInPage', (index, value,totalPages,nextButton,titlesLinks) => {
+Cypress.Commands.add('findInPage', (index, value, totalPages, nextButton, titlesLinks) => {
   let found = false;
   cy.get(totalPages).as('pages');
   cy.get('@pages').its('text').then(len => {
@@ -130,7 +130,7 @@ Cypress.Commands.add('register', (user, pass) => {
     url: '/Account/v1/User',
     body: {
       userName: user,
-      password:pass
+      password: pass
     },
   });
 });
@@ -138,8 +138,8 @@ Cypress.Commands.add('register', (user, pass) => {
 Cypress.Commands.add('loginGUI', (loginData) => {
   cy.session([loginData.userName, loginData.userPass], () => {
     cy.visit(loginData.url);
-    cy.gType(loginData.nameInput,loginData.userName);
-    cy.gType(loginData.passInput,loginData.userPass);
+    cy.gType(loginData.nameInput, loginData.userName);
+    cy.gType(loginData.passInput, loginData.userPass);
     cy.gClick(loginData.loginBtn);
     cy.url().should('contain', '/profile');
   });

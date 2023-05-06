@@ -11,7 +11,7 @@ Se requiere tener Node.js y npm instalados para ejecutar este proyecto.
 ## Instalación
 Ejecutar `npm install` (o `npm i` para la versión corta) para instalar las dependencias de desarrollo.
 
-## Tests
+## Pruebas
 
 > **Nota:** Antes de ejecutar las pruebas, registrarse en la pagina; crear un archivo `.env` en el directorio raiz, declarar las 
 variables CYPRESS_USER_NAME, CYPRESS_USER_PASS con sus respectivos usuario y contraseña.
@@ -21,7 +21,7 @@ Ejecutar `npm test` para abrir Cypress en modo interactivo en el navegador Chrom
 
 Ejecutar `npm run test-bsa-chrome` para ejecutar la prueba en modo headless.
 
-## Methods
+## Metodos
 Algunos de los métodos aprendidos son:
 ```
 get()

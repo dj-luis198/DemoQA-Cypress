@@ -134,3 +134,13 @@ Cypress.Commands.add('register', (user, pass) => {
     },
   });
 });
+
+Cypress.Commands.add('loginGUI', (loginData) => {
+  cy.session([loginData.userName, loginData.userPass], () => {
+    cy.visit(loginData.url);
+    cy.gType(loginData.nameInput,loginData.userName);
+    cy.gType(loginData.passInput,loginData.userPass);
+    cy.gClick(loginData.loginBtn);
+    cy.url().should('contain', '/profile');
+  });
+});

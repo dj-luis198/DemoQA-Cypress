@@ -11,7 +11,7 @@ describe('Session UI', () => {
     let pass='Az2528831040@';
 
     beforeEach(() => {
-        loginPage.loginUI(user,pass);
+        loginPage.login(user,pass);
         cy.visit('/profile');
     });
 

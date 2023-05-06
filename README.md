@@ -2,10 +2,23 @@
 
 [![Chrome](https://github.com/dj-luis198/DemoQA-Cypress/actions/workflows/main.yml/badge.svg)](https://github.com/dj-luis198/DemoQA-Cypress/actions/workflows/main.yml)
 
-[demoqa.com](https://demoqa.com) es una página provista por toolsqa.com para realizar practicas con Selenium. La misma posee módulos como botones, menús, formularios, etc.
+[demoqa.com](https://demoqa.com) es una página provista por toolsqa.com para realizar practicas con Selenium. La misma posee módulos como botones, menús, formularios, etc. En estas pruebas automatizadas se utilizó Cypress.io con Java Script aplicando el patron de diseño POM (Page Object Model).
+
+## Pre requisitos
+Se requiere tener Node.js y npm instalados para ejecutar este proyecto.
+> Usé versiones `v18.15.0` y `9.5.0` de Node.js y npm, respectivamente. Le sugiero que use la misma versión o versiones posteriores.
+
+## Instalación
+Ejecutar `npm install` (o `npm i` para la versión corta) para instalar las dependencias de desarrollo.
+
+## Tests
+
+Ejecutar `npm test` para abrir Cypress en modo interactivo en el navegador Chrome.
+
+Ejecutar `npm run test-bsa-chrome` para ejecutar la prueba en modo headless.
 
 ## Methods
-En estas pruebas automatizadas se utilizó Cypress.io con Java Script aplicando el patron de diseño POM (Page Object Model). Algunos de los métodos aprendidos son:
+Algunos de los métodos aprendidos son:
 ```
 get()
 type()
@@ -37,6 +50,7 @@ before()
 beforeEach()
 after()
 afterEach()
+session()
 ```
 además se utilizaron los plugins:
 

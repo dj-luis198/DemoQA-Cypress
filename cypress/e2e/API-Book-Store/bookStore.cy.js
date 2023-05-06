@@ -22,8 +22,8 @@ describe('Account API', () => {
     let userID;
     let token;
     let book, book2, book3;
-    let userName = "danielfarias7";
-    let userpass = "Az2528831040@";
+    let userName = Cypress.env('userName');
+    let userPass = Cypress.env('userPass');
 
     it('Post - Create user', () => {
         cy.request({
@@ -31,7 +31,7 @@ describe('Account API', () => {
             url: '/Account/v1/User',
             body: {
                 userName: userName,
-                password: userpass
+                password: userPass
             },
         }).then((response) => {
             expect(response.status).is.eq(201);
@@ -48,7 +48,7 @@ describe('Account API', () => {
             url: '/Account/v1/GenerateToken',
             body: {
                 userName: userName,
-                password: userpass
+                password: userPass
             },
         }).then((response) => {
             expect(response.status).is.eq(200);
@@ -69,7 +69,7 @@ describe('Account API', () => {
             },
             body: {
                 userName: userName,
-                password: userpass
+                password: userPass
             },
         }).then((response) => {
             expect(response.status).is.eq(200);
@@ -117,7 +117,7 @@ describe('Account API', () => {
             url: '/BookStore/v1/Books',
             auth: {
                 user: userName,
-                pass: userpass
+                pass: userPass
             },
             body: {
                 userId: userID,
@@ -155,7 +155,7 @@ describe('Account API', () => {
             url: `/BookStore/v1/Books/${book}`,
             auth: {
                 user: userName,
-                pass: userpass
+                pass: userPass
             },
             body: {
                 userId: userID,
@@ -175,7 +175,7 @@ describe('Account API', () => {
             url: '/BookStore/v1/Book',
             auth: {
                 user: userName,
-                pass: userpass
+                pass: userPass
             },
             body: {
                 userId: userID,
@@ -196,7 +196,7 @@ describe('Account API', () => {
             },
             auth: {
                 user: userName,
-                pass: userpass
+                pass: userPass
             },
         })
             .then((response) => {

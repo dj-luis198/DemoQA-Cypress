@@ -10,5 +10,5 @@ jobs:
         with:
           browser: chrome
         env:
-          CYPRESS_USER_NAME: danielfarias7
-          CYPRESS_USER_PASS: Az2528831040@
+          CYPRESS_USER_NAME: ${{ secrets.USER_NAME }}
+          CYPRESS_USER_PASS: ${{ secrets.USER_PASS }}

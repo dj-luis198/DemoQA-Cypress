@@ -19,7 +19,11 @@ variables CYPRESS_USER_NAME, CYPRESS_USER_PASS con sus respectivos usuario y con
 
 Ejecutar `npm test` para abrir Cypress en modo interactivo en el navegador Chrome.
 
-Ejecutar `npm run test-bsa-chrome` para ejecutar la prueba en modo headless.
+Ejecutar `npm run test-chrome` para ejecutar la prueba en modo headless.
+
+Ejecutar `npm run eslint cypress` para ejecutar analisis estatico de codigo.
+
+Ejecutar `npm run eslint cypress --fix` para corregir errores.
 
 ## Metodos
 Algunos de los métodos aprendidos son:
@@ -38,7 +42,7 @@ wrap()
 should()
 then()
 its()
-each(()
+each()
 visit()
 on()
 expect()
@@ -56,7 +60,7 @@ after()
 afterEach()
 session()
 ```
-además se utilizaron los plugins:
+además se utilizaron las dependencias:
 
 ```
 dotenv
@@ -65,6 +69,8 @@ file-upload
 downloadfile
 verify-downloads
 ajv validador schema
+eslint
+eslint-plugin-cypress
 
 ```
 ### Resultados

@@ -1,28 +1,28 @@
 ///<reference types="cypress" />
 
-import { HomePage } from "../../support/pages/homePage";
-import { BrokenLinksImagesPage } from "../../support/pages/brokenLinksImagesPage";
+import { HomePage } from '../../support/pages/homePage'
+import { BrokenLinksImagesPage } from '../../support/pages/brokenLinksImagesPage'
 
 describe('Broken Links - Images', () => {
-    const homePage = new HomePage();
-    const brokenLinksImagesPage = new BrokenLinksImagesPage();
+  const homePage = new HomePage()
+  const brokenLinksImagesPage = new BrokenLinksImagesPage()
 
-    beforeEach(() => {
-        cy.visit('/');
-        homePage.clickElements();
-        brokenLinksImagesPage.clickBrokenLinks();
-    });
+  beforeEach(() => {
+    cy.visit('/')
+    homePage.clickElements()
+    brokenLinksImagesPage.clickBrokenLinks()
+  })
 
-    it.skip('Verificar imagenes de la pagina', () => {
-        brokenLinksImagesPage.returnImageImg().each(img=>{
-            const href=img.prop('naturalHeight');
-            expect(href).is.greaterThan(0);
-        });
-    });
+  it.skip('Verificar imagenes de la pagina', () => {
+    brokenLinksImagesPage.returnImageImg().each(img => {
+      const href = img.prop('naturalHeight')
+      expect(href).is.greaterThan(0)
+    })
+  })
 
-    it.skip('Verificar links de la pagina', () => {
-        brokenLinksImagesPage.returnLinks().each(page=>{
-            cy.request(page.prop('href'))
-        });
-    });
-});
+  it.skip('Verificar links de la pagina', () => {
+    brokenLinksImagesPage.returnLinks().each(page => {
+      cy.request(page.prop('href'))
+    })
+  })
+})

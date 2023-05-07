@@ -9,21 +9,21 @@
 //          c. .trigger('event-name')
 
 ///<reference types="cypress" />
-import { HomePage } from "../../support/pages/homePage";
-import { SliderPage } from "../../support/pages/sliderPage";
+import { HomePage } from '../../support/pages/homePage'
+import { SliderPage } from '../../support/pages/sliderPage'
 
 describe('Slider', () => {
-    const homePage = new HomePage();
-    const sliderPage = new SliderPage();
+  const homePage = new HomePage()
+  const sliderPage = new SliderPage()
 
-    beforeEach(() => {
-        cy.visit('/');
-        homePage.clickWidgetsCard();
-        sliderPage.clickSlider();
-    });
+  beforeEach(() => {
+    cy.visit('/')
+    homePage.clickWidgetsCard()
+    sliderPage.clickSlider()
+  })
 
-    it('slider input type= range utilizando stepUp', () => {
-        sliderPage.moveSlider(90);
-        sliderPage.returnValueSlider().should('have.value', 90);
-    });
-});
+  it('slider input type= range utilizando stepUp', () => {
+    sliderPage.moveSlider(90)
+    sliderPage.returnValueSlider().should('have.value', 90)
+  })
+})

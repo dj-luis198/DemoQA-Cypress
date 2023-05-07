@@ -1,20 +1,20 @@
-export class BrokenLinksImagesPage{
+export class BrokenLinksImagesPage {
 
-    constructor(){
-        this.brokenLinks='#item-6';
-        this.imageImg='img[src*="images"]';
-        this.links='a[href]';
-    }
+  constructor() {
+    this.brokenLinks = '#item-6'
+    this.imageImg = 'img[src*="images"]'
+    this.links = 'a[href]'
+  }
 
-    clickBrokenLinks(){
-        cy.gClick(this.brokenLinks);
-    }
+  clickBrokenLinks() {
+    cy.gClick(this.brokenLinks)
+  }
 
-    returnImageImg(){
-        return cy.get( this.imageImg);
-    }
+  returnImageImg() {
+    return cy.get(this.imageImg)
+  }
 
-    returnLinks(){
-        return cy.get(this.links);
-    }
+  returnLinks() {
+    return cy.get(this.links)
+  }
 }

@@ -1,35 +1,35 @@
 export class HomePage {
 
-    constructor() {
-        this.elementsCard = 'Elements';
-        this.textBoxSpan = 'Text Box';
-        this.formCard = 'Forms';
-        this.AlertsFrameWindowsCard = 'Alerts, Frame & Windows';
-        this.widgetsCard = 'Widgets';
-        this.bookStoreButton='Book Store Application';
-    };
+  constructor() {
+    this.elementsCard = 'Elements'
+    this.textBoxSpan = 'Text Box'
+    this.formCard = 'Forms'
+    this.AlertsFrameWindowsCard = 'Alerts, Frame & Windows'
+    this.widgetsCard = 'Widgets'
+    this.bookStoreButton = 'Book Store Application'
+  }
 
-    clickBookStore(){
-        cy.cClick(this.bookStoreButton);
-    };
+  clickBookStore() {
+    cy.cClick(this.bookStoreButton)
+  }
 
-    clickWidgetsCard() {
-        cy.cClick(this.widgetsCard);
-    };
+  clickWidgetsCard() {
+    cy.cClick(this.widgetsCard)
+  }
 
-    clickAlertsFrameWindowsCard() {
-        cy.cClick(this.AlertsFrameWindowsCard);
-    };
+  clickAlertsFrameWindowsCard() {
+    cy.cClick(this.AlertsFrameWindowsCard)
+  }
 
-    clickElements() {
-        cy.cClick(this.elementsCard);
-    };
+  clickElements() {
+    cy.cClick(this.elementsCard)
+  }
 
-    clickForms() {
-        cy.cClick(this.formCard);
-    };
+  clickForms() {
+    cy.cClick(this.formCard)
+  }
 
-    clickTextBox() {
-        cy.cClick(this.textBoxSpan);
-    };
-};
+  clickTextBox() {
+    cy.cClick(this.textBoxSpan)
+  }
+}

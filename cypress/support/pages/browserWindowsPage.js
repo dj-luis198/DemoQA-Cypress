@@ -1,25 +1,25 @@
-export class BrowserWindowsPage{
+export class BrowserWindowsPage {
 
-    constructor(){
-        this.browserWindowsButton='Browser Windows';
-        this.tabButton='#tabButton';
-        this.windowButton='#windowButton';
-        this.messageWindowButton='#messageWindowButton';
-    }
+  constructor() {
+    this.browserWindowsButton = 'Browser Windows'
+    this.tabButton = '#tabButton'
+    this.windowButton = '#windowButton'
+    this.messageWindowButton = '#messageWindowButton'
+  }
 
-    clickBrowserWindows(){
-        cy.cClick(this.browserWindowsButton);
-    };
+  clickBrowserWindows() {
+    cy.cClick(this.browserWindowsButton)
+  }
 
-    clickTabButton(){
-        cy.gClick(this.tabButton);
-    };
+  clickTabButton() {
+    cy.gClick(this.tabButton)
+  }
 
-    clickWindowButton(){
-        cy.gClick(this.windowButton);
-    };
+  clickWindowButton() {
+    cy.gClick(this.windowButton)
+  }
 
-    clickMessageWindow(){
-        cy.gClick(this.messageWindowButton);
-    }
+  clickMessageWindow() {
+    cy.gClick(this.messageWindowButton)
+  }
 }

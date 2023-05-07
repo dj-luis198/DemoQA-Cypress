@@ -1,9 +1,9 @@
-export class ProfilePage{
-    constructor(){
-        this.userNameLabel='#userName-value';        
-    };
+export class ProfilePage {
+  constructor() {
+    this.userNameLabel = '#userName-value'
+  }
 
-    returnUserNameProfile(){
-        return cy.get(this.userNameLabel);
-    };
-};
+  returnUserNameProfile() {
+    return cy.get(this.userNameLabel)
+  }
+}

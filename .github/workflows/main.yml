@@ -1,6 +1,15 @@
 name: Chrome
 on: push
 jobs:
+  eslint:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install modules
+      run: npm install
+    - name: Run ESLint
+      run: npm run lint
+      
   chrome:
     runs-on: ubuntu-22.04
     name: E2E on Chrome

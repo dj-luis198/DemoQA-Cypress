@@ -3,6 +3,7 @@ on: push
 jobs:
   eslint:
     runs-on: ubuntu-22.04
+    name: Static code analiysis
     steps:
     - uses: actions/checkout@v3
     - name: Install modules

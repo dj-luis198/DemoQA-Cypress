@@ -1,13 +1,17 @@
-require('dotenv').config()
 const { defineConfig } = require('cypress')
+require('dotenv').config()
 const { downloadFile } = require('cypress-downloadfile/lib/addPlugin')
 const { isFileExist, findFiles } = require('cy-verify-downloads')
 
-
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'demoQA',
+  },
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on)
       on('task', { downloadFile })
       on('task', { isFileExist, findFiles })
       config.env.userName = process.env.CYPRESS_USER_NAME
@@ -26,6 +30,7 @@ module.exports = defineConfig({
     video: false,
 
   },
+
   chromeWebSecurity: false,
   watchForFileChanges: false,
   defaultCommandTimeout: 10000,

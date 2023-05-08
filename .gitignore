@@ -45,6 +45,7 @@ jspm_packages/
 cypress/e2e/1-getting-started/
 cypress/e2e/2-advanced-examples
 cypress/downloads
+cypress/reports
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

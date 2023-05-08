@@ -2,6 +2,10 @@
 
 [![Chrome](https://github.com/dj-luis198/DemoQA-Cypress/actions/workflows/main.yml/badge.svg)](https://github.com/dj-luis198/DemoQA-Cypress/actions/workflows/main.yml)
 
+Link a reporte de pruebas https://dj-luis198.github.io/DemoQA-Cypress/
+
+----------------------------
+
 [demoqa.com](https://demoqa.com) es una página provista por toolsqa.com para realizar practicas con Selenium. La misma posee módulos como botones, menús, formularios, etc. En estas pruebas automatizadas se utilizó Cypress.io con Java Script aplicando el patron de diseño POM (Page Object Model).
 
 ## Pre requisitos
@@ -71,6 +75,7 @@ verify-downloads
 ajv validador schema
 eslint
 eslint-plugin-cypress
+cypress-mochawesome-reporter
 
 ```
 ### Resultados

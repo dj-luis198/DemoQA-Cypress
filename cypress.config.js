@@ -4,6 +4,7 @@ const { downloadFile } = require('cypress-downloadfile/lib/addPlugin')
 const { isFileExist, findFiles } = require('cy-verify-downloads')
 
 module.exports = defineConfig({
+  projectId: 'sdhkib',
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,

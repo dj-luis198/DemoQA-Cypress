@@ -20,7 +20,7 @@ describe('Broken Links - Images', () => {
     })
   })
 
-  it.skip('Verificar links de la pagina', () => {
+  it('Verificar links de la pagina', () => {
     brokenLinksImagesPage.returnLinks().each(page => {
       cy.request(page.prop('href'))
     })

@@ -1,5 +1,8 @@
 name: Chrome
-on: push
+on: 
+    push:
+    schedule:
+       - cron: '0 0 * * *'
 jobs:
   eslint:
     runs-on: ubuntu-22.04

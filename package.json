@@ -13,13 +13,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@faker-js/faker": "^7.6.0",
     "cy-verify-downloads": "^0.1.14",
-    "cypress": "^12.0.0",
+    "cypress": "^12.11.0",
     "cypress-dotenv": "^2.0.0",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.4.0",
     "dotenv": "^16.0.3",
+    "esbuild": "^0.17.18",
     "eslint": "^8.40.0",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-react": "^7.32.2"

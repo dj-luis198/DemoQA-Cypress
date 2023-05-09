@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress')
+const esbuildPreprocessor = require('./cypress/support/esbuild-preprocessor')
 require('dotenv').config()
 const { downloadFile } = require('cypress-downloadfile/lib/addPlugin')
 const { isFileExist, findFiles } = require('cy-verify-downloads')
@@ -12,6 +13,7 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents(on, config) {
+      esbuildPreprocessor(on)
       require('cypress-mochawesome-reporter/plugin')(on)
       on('task', { downloadFile })
       on('task', { isFileExist, findFiles })
@@ -30,6 +32,10 @@ module.exports = defineConfig({
     screenshotOnRunFailure: false,
     video: false,
 
+  },
+  retries:{
+    runMode:2,
+    openMode:0
   },
 
   chromeWebSecurity: false,

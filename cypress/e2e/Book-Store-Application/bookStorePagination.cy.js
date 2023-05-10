@@ -10,11 +10,16 @@ describe('Book Store Pagination', () => {
 
   beforeEach(() => {
     cy.visit('/')
+    cy.injectAxe()
     homePage.clickBookStore()
     bookStorePaginationPage.clickBookStoreButton()
     bookStorePaginationPage.selectRowsPerPage()
-
   })
+
+  it('Accessibility violations', () => {
+    cy.customCheckAlly()
+  })
+
   it('Pagination', () => {
     bookStorePaginationPage.findItem('Programming JavaScript Applications')
   })

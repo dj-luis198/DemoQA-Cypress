@@ -16,7 +16,7 @@ export class PracticeFormPage {
     this.currentAddressInput = '#currentAddress'
     this.state = '#state>[class$="control"]'
     this.stateOrCityOptions = '[class$="option"]'
-    this.city = '#city'
+    this.city = '[class$="-placeholder"]'
     this.submitButton = '#submit'
   }
 
@@ -90,11 +90,11 @@ export class PracticeFormPage {
 
   selectState(state) {
     cy.gClick(this.state)
-    cy.get(this.stateOrCityOptions).eq(state).click()
+    cy.get(this.stateOrCityOptions).eq(state).click({force: true})
   }
 
   selectCity(city) {
-    cy.get(this.city).click()
+    cy.contains(this.city,'Select City').click({force: true})
     cy.get(this.stateOrCityOptions).eq(city).click({ force: true })
   }
 

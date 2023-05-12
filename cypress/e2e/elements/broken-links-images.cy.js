@@ -13,14 +13,14 @@ describe('Broken Links - Images', () => {
     brokenLinksImagesPage.clickBrokenLinks()
   })
 
-  it.skip('Verificar imagenes de la pagina', () => {
+  it('Verificar imagenes de la pagina', () => {
     brokenLinksImagesPage.returnImageImg().each(img => {
       const href = img.prop('naturalHeight')
       expect(href).is.greaterThan(0)
     })
   })
 
-  it.skip('Verificar links de la pagina', () => {
+  it('Verificar links de la pagina', () => {
     brokenLinksImagesPage.returnLinks().each(page => {
       cy.request(page.prop('href'))
     })

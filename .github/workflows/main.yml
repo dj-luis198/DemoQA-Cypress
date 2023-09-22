@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Static code analiysis
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4.1.0
     - name: Install modules
       run: npm install
     - name: Run ESLint
@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-22.04
     name: E2E on Chrome
     steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
+      - uses: actions/checkout@v4.1.0
+      - uses: cypress-io/github-action@v6.3.0
         with:
           browser: chrome
         env:

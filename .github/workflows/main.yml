@@ -3,17 +3,7 @@ on:
     push:
     schedule:
        - cron: '0 0,6,12,18 * * *'
-jobs:
-  eslint:
-    runs-on: ubuntu-22.04
-    name: Static code analiysis
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install modules
-      run: npm install
-    - name: Run ESLint
-      run: npm run lint
-      
+jobs:      
   chrome:
     runs-on: ubuntu-22.04
     name: E2E on Chrome

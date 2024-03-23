@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-03-23T18:19:23.477Z",
+    "end": "2024-03-23T18:19:36.063Z",
+    "duration": 12586,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d0e6bf97-d7f3-47da-affc-180da21cd828",
+      "title": "",
+      "fullFile": "cypress/e2e/Book-Store-Application/bookStorePagination.cy.js",
+      "file": "cypress/e2e/Book-Store-Application/bookStorePagination.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e1187214-deca-4964-a905-cf17641e035e",
+          "title": "Book Store Pagination",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Accessibility violations",
+              "fullTitle": "Book Store Pagination Accessibility violations",
+              "timedOut": null,
+              "duration": 3314,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.customCheckAlly();",
+              "err": {
+                "message": "AssertionError: 7 accessibility violations were detected: expected 7 to equal 0",
+                "estack": "AssertionError: 7 accessibility violations were detected: expected 7 to equal 0\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:3759:20)",
+                "diff": null
+              },
+              "uuid": "3154740d-4c0b-493b-8ca0-e4cfe2cb4b6a",
+              "parentUUID": "e1187214-deca-4964-a905-cf17641e035e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pagination",
+              "fullTitle": "Book Store Pagination Pagination",
+              "timedOut": null,
+              "duration": 2060,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "bookStorePaginationPage.findItem(\"Programming JavaScript Applications\");",
+              "err": {},
+              "uuid": "593818c2-8a52-4cf3-ba20-7630198881f7",
+              "parentUUID": "e1187214-deca-4964-a905-cf17641e035e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "593818c2-8a52-4cf3-ba20-7630198881f7"
+          ],
+          "failures": [
+            "3154740d-4c0b-493b-8ca0-e4cfe2cb4b6a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5374,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

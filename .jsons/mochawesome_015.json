@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-03-23T18:20:24.997Z",
+    "end": "2024-03-23T18:20:35.816Z",
+    "duration": 10819,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fbcf04d2-9bb7-4554-a9c6-75a6f7abeebb",
+      "title": "",
+      "fullFile": "cypress/e2e/elements/broken-links-images.cy.js",
+      "file": "cypress/e2e/elements/broken-links-images.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "447abca2-c0ec-47b1-9e42-ae82b979b60e",
+          "title": "Broken Links - Images",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar imagenes de la pagina",
+              "fullTitle": "Broken Links - Images Verificar imagenes de la pagina",
+              "timedOut": null,
+              "duration": 1286,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "brokenLinksImagesPage.returnImageImg().each((img) => {\n  const href = img.prop(\"naturalHeight\");\n  expect(href).is.greaterThan(0);\n});",
+              "err": {
+                "message": "AssertionError: expected 0 to be above 0",
+                "estack": "AssertionError: expected 0 to be above 0\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/e2e/elements/broken-links-images.cy.js:1899:25)",
+                "diff": ""
+              },
+              "uuid": "f69f4517-c3a9-45d0-a5b5-6c4e11d28da4",
+              "parentUUID": "447abca2-c0ec-47b1-9e42-ae82b979b60e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar links de la pagina",
+              "fullTitle": "Broken Links - Images Verificar links de la pagina",
+              "timedOut": null,
+              "duration": 1993,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "brokenLinksImagesPage.returnLinks().each((page) => {\n  cy.request(page.prop(\"href\"));\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttp://the-internet.herokuapp.com/status_codes/500\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://the-internet.herokuapp.com/status_codes/500\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1711218035&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zfgUHUMZQ8kRHkgQUclGVTGl8Zcp99JjDmJAX8xKhn0%3D\\\"}]}\",\n  \"reporting-endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1711218035&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zfgUHUMZQ8kRHkgQUclGVTGl8Zcp99JjDmJAX8xKhn0%3D\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n  \"connection\": \"keep-alive\",\n  \"content-type\": \"text/html;charset=utf-8\",\n  \"content-length\": \"1738\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"server\": \"WEBrick/1.6.0 (Ruby/2.7.2/2020-10-01)\",\n  \"date\": \"Sat, 23 Mar 2024 18:20:35 GMT\",\n  \"set-cookie\": [\n    \"rack.session=BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiRWI3Y2IyZWU0YzYxOGQ1ODE5YzA2%0ANjkzNjFiYmM1MTAyZTg4ZDQ3OTZlNzZhYjBjYTg4NDdhYzZjYTM3OTFkMjcG%0AOwBGSSIJY3NyZgY7AEZJIiVkZTc3MDljNDMzYWY3NjFhZWIwMTg0NTVlNTZk%0AMjI3ZAY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi04OTEzNGRiMTZlNTJjYTFlMzQ0MTYxM2M4NjUxZmIyYWM1ZTFiZjZi%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBGSSIKZmxhc2gGOwBG%0AewA%3D%0A--720d08c8c4947b29c91453b85f0c90e7f84df7ac; path=/; HttpOnly\"\n  ],\n  \"via\": \"1.1 vegur\"\n}\nBody: <!DOCTYPE html>\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\" > <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en\" > <!--<![endif]-->\n\n<html>\n  <head>\n    <script src=\"/js/vendor/298279967.js\"></script>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>The Internet</title>\n    <link href=\"/css/app.css\" rel=\"stylesheet\">\n    <link href=\"/css/font-awesome.css\" rel=\"stylesheet\">\n    <script src=\"/js/vendor/jquery-1.11.3.min.js\"></script>\n    <script src=\"/js/vendor/jquery-ui-1.11.4/jquery-ui.js\"></script>\n    <script src=\"/js/foundation/foundation.js\"></script>\n    <script src=\"/js/foundation/foundation.alerts.js\"></script>\n    <script>\n      $(document).foundation();\n    </script>\n  </head>\n  <body>\n    <div class=\"row\">\n      <div id=\"flash-messages\" class=\"large-12 columns\">\n      \n        \n      \n        \n      \n        \n      \n      </div>\n    </div>\n    <div class=\"row\">\n      <a href=\"https://github.com/tourdedave/the-internet\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"/img/forkme_right_green_007200.png\" alt=\"Fork me on GitHub\"></a>\n      <div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Status Codes</h3>\n  <p>\n    This page returned a 500 status code.</br>\n    </br>\n    For a definition and common list of HTTP status codes, go <a href='/status_codes'>here</a>\n  </p>\n</div>\n\n      </div>\n    </div>\n    <div id='page-footer' class=\"row\">\n      <div class=\"large-4 large-centered columns\">\n        <hr>\n        <div style=\"text-align: center;\">Powered by <a target=\"_blank\" href=\"http://elementalselenium.com/\">Elemental Selenium</a></div>\n      </div>\n    </div>\n  </body>\n</html>\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://the-internet.herokuapp.com/status_codes/500\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://the-internet.herokuapp.com/status_codes/500\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/122.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1711218035&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zfgUHUMZQ8kRHkgQUclGVTGl8Zcp99JjDmJAX8xKhn0%3D\\\"}]}\",\n  \"reporting-endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1711218035&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zfgUHUMZQ8kRHkgQUclGVTGl8Zcp99JjDmJAX8xKhn0%3D\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n  \"connection\": \"keep-alive\",\n  \"content-type\": \"text/html;charset=utf-8\",\n  \"content-length\": \"1738\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"server\": \"WEBrick/1.6.0 (Ruby/2.7.2/2020-10-01)\",\n  \"date\": \"Sat, 23 Mar 2024 18:20:35 GMT\",\n  \"set-cookie\": [\n    \"rack.session=BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiRWI3Y2IyZWU0YzYxOGQ1ODE5YzA2%0ANjkzNjFiYmM1MTAyZTg4ZDQ3OTZlNzZhYjBjYTg4NDdhYzZjYTM3OTFkMjcG%0AOwBGSSIJY3NyZgY7AEZJIiVkZTc3MDljNDMzYWY3NjFhZWIwMTg0NTVlNTZk%0AMjI3ZAY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi04OTEzNGRiMTZlNTJjYTFlMzQ0MTYxM2M4NjUxZmIyYWM1ZTFiZjZi%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBGSSIKZmxhc2gGOwBG%0AewA%3D%0A--720d08c8c4947b29c91453b85f0c90e7f84df7ac; path=/; HttpOnly\"\n  ],\n  \"via\": \"1.1 vegur\"\n}\nBody: <!DOCTYPE html>\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\" > <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en\" > <!--<![endif]-->\n\n<html>\n  <head>\n    <script src=\"/js/vendor/298279967.js\"></script>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>The Internet</title>\n    <link href=\"/css/app.css\" rel=\"stylesheet\">\n    <link href=\"/css/font-awesome.css\" rel=\"stylesheet\">\n    <script src=\"/js/vendor/jquery-1.11.3.min.js\"></script>\n    <script src=\"/js/vendor/jquery-ui-1.11.4/jquery-ui.js\"></script>\n    <script src=\"/js/foundation/foundation.js\"></script>\n    <script src=\"/js/foundation/foundation.alerts.js\"></script>\n    <script>\n      $(document).foundation();\n    </script>\n  </head>\n  <body>\n    <div class=\"row\">\n      <div id=\"flash-messages\" class=\"large-12 columns\">\n      \n        \n      \n        \n      \n        \n      \n      </div>\n    </div>\n    <div class=\"row\">\n      <a href=\"https://github.com/tourdedave/the-internet\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"/img/forkme_right_green_007200.png\" alt=\"Fork me on GitHub\"></a>\n      <div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Status Codes</h3>\n  <p>\n    This page returned a 500 status code.</br>\n    </br>\n    For a definition and common list of HTTP status codes, go <a href='/status_codes'>here</a>\n  </p>\n</div>\n\n      </div>\n    </div>\n    <div id='page-footer' class=\"row\">\n      <div class=\"large-4 large-centered columns\">\n        <hr>\n        <div style=\"text-align: center;\">Powered by <a target=\"_blank\" href=\"http://elementalselenium.com/\">Elemental Selenium</a></div>\n      </div>\n    </div>\n  </body>\n</html>\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "2a81d873-8480-420e-8d29-88890d8fcd67",
+              "parentUUID": "447abca2-c0ec-47b1-9e42-ae82b979b60e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f69f4517-c3a9-45d0-a5b5-6c4e11d28da4",
+            "2a81d873-8480-420e-8d29-88890d8fcd67"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3279,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

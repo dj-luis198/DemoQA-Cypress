@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-23T18:20:37.326Z",
+    "end": "2024-03-23T18:20:41.315Z",
+    "duration": 3989,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38ae8a2c-7f8b-44e0-b262-c49e32ef87a4",
+      "title": "",
+      "fullFile": "cypress/e2e/elements/buttons.cy.js",
+      "file": "cypress/e2e/elements/buttons.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d75ea767-48d2-4d40-bf9b-6997008a08e8",
+          "title": "Buttons",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "validar dar doble click",
+              "fullTitle": "Buttons validar dar doble click",
+              "timedOut": null,
+              "duration": 1735,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "buttonsPage.doubleClick();\nbuttonsPage.returnDblClickMessg().invoke(\"text\").then((res) => {\n  expect(res).to.eql(\"You have done a double click\");\n});",
+              "err": {},
+              "uuid": "82c5919e-138e-4681-bc7e-c897f84f8b50",
+              "parentUUID": "d75ea767-48d2-4d40-bf9b-6997008a08e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validar dar click derecho",
+              "fullTitle": "Buttons validar dar click derecho",
+              "timedOut": null,
+              "duration": 924,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "buttonsPage.rightClick();\nbuttonsPage.returnRgtClickMssg().invoke(\"text\").then((res) => {\n  expect(res).to.eql(\"You have done a right click\");\n});",
+              "err": {},
+              "uuid": "4c451ae6-deb9-43d4-b3ba-5c55de350099",
+              "parentUUID": "d75ea767-48d2-4d40-bf9b-6997008a08e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validar dar click en el boton",
+              "fullTitle": "Buttons validar dar click en el boton",
+              "timedOut": null,
+              "duration": 1082,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "buttonsPage.clickButtonDinamic();\nbuttonsPage.returnClickMssg().invoke(\"text\").then((res) => {\n  expect(res).to.eql(\"You have done a dynamic click\");\n});",
+              "err": {},
+              "uuid": "62c29d9a-a865-41aa-8f3b-e9cc9f0cf492",
+              "parentUUID": "d75ea767-48d2-4d40-bf9b-6997008a08e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82c5919e-138e-4681-bc7e-c897f84f8b50",
+            "4c451ae6-deb9-43d4-b3ba-5c55de350099",
+            "62c29d9a-a865-41aa-8f3b-e9cc9f0cf492"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3741,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-23T18:19:09.790Z",
+    "end": "2024-03-23T18:19:13.102Z",
+    "duration": 3312,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "17421bf0-8f4d-4b29-b430-5f2c9ccee6a3",
+      "title": "",
+      "fullFile": "cypress/e2e/Alerts -Frame-Windows/frames.cy.js",
+      "file": "cypress/e2e/Alerts -Frame-Windows/frames.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e24d961a-c946-48ee-af12-f5111ae87ca0",
+          "title": "Frames",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "frame11",
+              "fullTitle": "Frames frame11",
+              "timedOut": null,
+              "duration": 1839,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "framesPage.returnIframe11().should(\"have.text\", \"This is a sample page\");",
+              "err": {},
+              "uuid": "a1867959-7b25-4c1d-b020-30df5eee9dee",
+              "parentUUID": "e24d961a-c946-48ee-af12-f5111ae87ca0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "frame22",
+              "fullTitle": "Frames frame22",
+              "timedOut": null,
+              "duration": 1217,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "framesPage.returnIframe22().should(\"have.text\", \"This is a sample page\");",
+              "err": {},
+              "uuid": "9e1e23d9-262e-4ae4-be95-0738efc34a6a",
+              "parentUUID": "e24d961a-c946-48ee-af12-f5111ae87ca0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a1867959-7b25-4c1d-b020-30df5eee9dee",
+            "9e1e23d9-262e-4ae4-be95-0738efc34a6a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3056,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

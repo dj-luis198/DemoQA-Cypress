@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-23T18:19:38.691Z",
+    "end": "2024-03-23T18:19:47.792Z",
+    "duration": 9101,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b7ff48df-43a5-48be-ad3f-f47b09be47d8",
+      "title": "",
+      "fullFile": "cypress/e2e/Widgets/Select.cy.js",
+      "file": "cypress/e2e/Widgets/Select.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+          "title": "Select Menu",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Select Value (id and tabindex)",
+              "fullTitle": "Select Menu Select Value (id and tabindex)",
+              "timedOut": null,
+              "duration": 2206,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.clickSelectInput();\nselectPage.returnMenuOptions().should(\"be.visible\");\nselectPage.selectToOption(singleOp.index);\nselectPage.returnSingleValue().should(\"have.text\", singleOp.value);",
+              "err": {},
+              "uuid": "02fe212f-3079-4644-b7a0-4bbe91034a0f",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Old Style Select Menu (select option por text)",
+              "fullTitle": "Select Menu Old Style Select Menu (select option por text)",
+              "timedOut": null,
+              "duration": 1128,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.selectOldSelectMenu(\"Blue\").should(\"have.value\", \"1\");\nselectPage.returnOptionValue(\"1\").invoke(\"prop\", \"selected\").should(\"eq\", true);",
+              "err": {},
+              "uuid": "483aac29-13e2-4f33-b142-d600b5b7f2f6",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Old Style Select Menu (select option por value)",
+              "fullTitle": "Select Menu Old Style Select Menu (select option por value)",
+              "timedOut": null,
+              "duration": 1027,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.selectOldSelectMenuValue(\"1\").find(\"option:selected\").as(\"selectV\").invoke(\"text\").should(\"eq\", \"Blue\");\ncy.get(\"@selectV\").invoke(\"val\").should(\"eq\", \"1\");",
+              "err": {},
+              "uuid": "bcf8b20a-a2ad-4797-aa12-5f8515dd42f6",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select One (es igual al primero)",
+              "fullTitle": "Select Menu Select One (es igual al primero)",
+              "timedOut": null,
+              "duration": 1069,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.clickSelectTitle();\nselectPage.returnMenuOptTitle().should(\"be.visible\");\nselectPage.selectToOptionTitle(\"0-0\");\nselectPage.returnSingleValueTitle().should(\"have.text\", \"Dr.\");",
+              "err": {},
+              "uuid": "4735a8a2-a5f7-4fe9-b8f8-390ebc042a4d",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Multiselect drop down (sin select)",
+              "fullTitle": "Select Menu Multiselect drop down (sin select)",
+              "timedOut": null,
+              "duration": 1502,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.clickMultiselectDropDown();\nselectPage.returnOptionsDropDown().should(\"be.visible\");\nselectPage.selectToOptionDropDown(\"3\");\nselectPage.selectToOptionDropDown(\"1\");\nselectPage.returnselectOptionDropDown().invoke(\"text\").should(\"eq\", [\"Red\", \"Blue\"].join(\"\"));",
+              "err": {},
+              "uuid": "a0f009b2-f6b4-4a48-8ba7-620162b61bc2",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Standard multi select (con select)",
+              "fullTitle": "Select Menu Standard multi select (con select)",
+              "timedOut": null,
+              "duration": 1305,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "selectPage.selectoptionsCars([\"Volvo\", \"Audi\"]);\nselectPage.returnOptionsSelected().invoke(\"text\").should(\"eq\", [\"Volvo\", \"Audi\"].join(\"\"));",
+              "err": {},
+              "uuid": "0f68611a-56a4-484d-8183-d3dcfb457782",
+              "parentUUID": "bf470262-2325-4ef5-96de-b9ce8c9a7330",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "02fe212f-3079-4644-b7a0-4bbe91034a0f",
+            "483aac29-13e2-4f33-b142-d600b5b7f2f6",
+            "bcf8b20a-a2ad-4797-aa12-5f8515dd42f6",
+            "4735a8a2-a5f7-4fe9-b8f8-390ebc042a4d",
+            "a0f009b2-f6b4-4a48-8ba7-620162b61bc2",
+            "0f68611a-56a4-484d-8183-d3dcfb457782"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8237,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-06-05T18:23:51.452Z",
+    "end": "2024-06-05T18:23:52.186Z",
+    "duration": 734,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "2fab62f2-b039-4abb-928b-e59796511ed9",
+      "title": "",
+      "fullFile": "cypress/e2e/Alerts -Frame-Windows/browser-windows.cy.js",
+      "file": "cypress/e2e/Alerts -Frame-Windows/browser-windows.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c448ec6a-d5a4-42cc-9d94-322e07821d70",
+          "title": "Browser windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "New tab",
+              "fullTitle": "Browser windows New tab",
+              "timedOut": null,
+              "duration": 199,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "browserWindowsPage.clickTabButton();\ncy.intercept(\n  \"https://demoqa.com/sample\"\n).as(\"tab\");\ncy.wait(\"@tab\").then((res) => {\n  expect(res.response.statusCode).to.eq(200);\n  expect(res.response.url).to.eq(\"https://demoqa.com/sample\");\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demoqa.com/\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Browser windows`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demoqa.com/\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Browser windows`\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:130950:76)\n    at visitFailedByErr (https://demoqa.com/__cypress/runner/cypress_runner.js:130358:12)\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:130933:13)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/e2e/Alerts%20-Frame-Windows/browser-windows.cy.js:1896:10)",
+                "diff": null
+              },
+              "uuid": "b3609ca1-2a8b-4844-84f5-0d8dbcfe7bfe",
+              "parentUUID": "c448ec6a-d5a4-42cc-9d94-322e07821d70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New window",
+              "fullTitle": "Browser windows New window",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browserWindowsPage.clickWindowButton();\ncy.intercept(\n  \"https://demoqa.com/sample\"\n).as(\"window\");\ncy.wait(\"@window\").then((res) => {\n  expect(res.response.statusCode).to.eq(200);\n  expect(res.response.url).to.eq(\"https://demoqa.com/sample\");\n});",
+              "err": {},
+              "uuid": "a8b8d001-8eb6-4178-adf7-1467cabd79a5",
+              "parentUUID": "c448ec6a-d5a4-42cc-9d94-322e07821d70",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b3609ca1-2a8b-4844-84f5-0d8dbcfe7bfe"
+          ],
+          "pending": [],
+          "skipped": [
+            "a8b8d001-8eb6-4178-adf7-1467cabd79a5"
+          ],
+          "duration": 199,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

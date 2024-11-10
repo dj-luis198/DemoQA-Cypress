@@ -1,0 +1,330 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 11,
+    "passes": 3,
+    "pending": 0,
+    "failures": 8,
+    "start": "2024-11-10T12:36:23.499Z",
+    "end": "2024-11-10T12:36:29.042Z",
+    "duration": 5543,
+    "testsRegistered": 11,
+    "passPercent": 27.27272727272727,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "739cd402-d062-459f-9d70-491d244f8db5",
+      "title": "",
+      "fullFile": "cypress/e2e/API-Book-Store/bookStore.cy.js",
+      "file": "cypress/e2e/API-Book-Store/bookStore.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+          "title": "Account API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Post - Create user",
+              "fullTitle": "Account API Post - Create user",
+              "timedOut": null,
+              "duration": 224,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"/Account/v1/User\",\n  body: {\n    userName,\n    password: userPass\n  }\n}).then((response) => {\n  expect(response.status).is.eq(201);\n  const validate = ajv.compile(schema);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n  userID = response.body.userID;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://demoqa.com/Account/v1/User\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 55\n}\nBody: {\"userName\":\"danielfarias7\",\"password\":\"Az2528831040@\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:24 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"40\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"etag\": \"W/\\\"28-Ol+1T9TtJMfkxjesktiJwJPAuBU\\\"\"\n}\nBody: {\n  \"code\": \"1204\",\n  \"message\": \"User exists!\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://demoqa.com/Account/v1/User\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 55\n}\nBody: {\"userName\":\"danielfarias7\",\"password\":\"Az2528831040@\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:24 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"40\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"etag\": \"W/\\\"28-Ol+1T9TtJMfkxjesktiJwJPAuBU\\\"\"\n}\nBody: {\n  \"code\": \"1204\",\n  \"message\": \"User exists!\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "520784c4-8fde-4220-8ca0-2ce4bce66636",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Post - Generate Token",
+              "fullTitle": "Account API Post - Generate Token",
+              "timedOut": null,
+              "duration": 450,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"/Account/v1/GenerateToken\",\n  body: {\n    userName,\n    password: userPass\n  }\n}).then((response) => {\n  expect(response.status).is.eq(200);\n  const validate = ajv.compile(schemaToken);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n  token = response.body.token;\n});",
+              "err": {},
+              "uuid": "06c8a86c-b45b-498c-a3b5-0f7eabcf43e5",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Post - Authorized",
+              "fullTitle": "Account API Post - Authorized",
+              "timedOut": null,
+              "duration": 229,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(token);\ncy.request({\n  method: \"POST\",\n  url: \"/Account/v1/Authorized\",\n  headers: {\n    \"Content-Type\": \"application/json\"\n  },\n  body: {\n    userName,\n    password: userPass\n  }\n}).then((response) => {\n  expect(response.status).is.eq(200);\n  expect(response.body).is.eq(true);\n});",
+              "err": {},
+              "uuid": "bafca794-137f-447d-8b25-6618fdb976ff",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get - User",
+              "fullTitle": "Account API Get - User",
+              "timedOut": null,
+              "duration": 128,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: `/Account/v1/User/${userID}`,\n  headers: {\n    \"Authorization\": `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\n  }\n}).then((response) => {\n  expect(response.status).to.have.eq(200);\n  const validate = ajv.compile(schemaUser);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User/undefined\n\nThe response we received from your web server was:\n\n  > 401: Unauthorized\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://demoqa.com/Account/v1/User/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImRhbmllbGZhcmlhczciLCJwYXNzd29yZCI6IkF6MjUyODgzMTA0MEAiLCJpYXQiOjE3MzEyNDIxODR9.vmJVEpI9OOTQHyTC_fRAeh2FKb3E3B_bz-KGwNtL7WM\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 401 - Unauthorized\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:25 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"43\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"etag\": \"W/\\\"2b-hLPYyb0m8IpHH/aFjmp8VZrYXGw\\\"\"\n}\nBody: {\n  \"code\": \"1207\",\n  \"message\": \"User not found!\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User/undefined\n\nThe response we received from your web server was:\n\n  > 401: Unauthorized\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://demoqa.com/Account/v1/User/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImRhbmllbGZhcmlhczciLCJwYXNzd29yZCI6IkF6MjUyODgzMTA0MEAiLCJpYXQiOjE3MzEyNDIxODR9.vmJVEpI9OOTQHyTC_fRAeh2FKb3E3B_bz-KGwNtL7WM\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 401 - Unauthorized\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:25 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"43\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"etag\": \"W/\\\"2b-hLPYyb0m8IpHH/aFjmp8VZrYXGw\\\"\"\n}\nBody: {\n  \"code\": \"1207\",\n  \"message\": \"User not found!\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "df5fd49f-86c1-4163-998d-bc992379e2ee",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get - Books",
+              "fullTitle": "Account API Get - Books",
+              "timedOut": null,
+              "duration": 128,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \"/BookStore/v1/Books\"\n}).then((response) => {\n  expect(response.status).to.have.eq(200);\n  const validate = ajv.compile(schemaGBooks);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n  book = response.body.books[0].isbn;\n  book2 = response.body.books[1].isbn;\n  book3 = response.body.books[2].isbn;\n});",
+              "err": {},
+              "uuid": "1e7b5795-2258-456e-acba-43fdc034aff0",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Post - add books user",
+              "fullTitle": "Account API Post - add books user",
+              "timedOut": null,
+              "duration": 125,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"/BookStore/v1/Books\",\n  auth: {\n    user: userName,\n    pass: userPass\n  },\n  body: {\n    userId: userID,\n    collectionOfIsbns: [{ isbn: book }, { isbn: book3 }]\n  }\n}).then((response) => {\n  expect(response.status).is.eq(201);\n  const validate = ajv.compile(schemaBooksUser);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n  expect(response.body.books[0].isbn).to.eq(book);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://demoqa.com/BookStore/v1/Books\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 73\n}\nBody: {\"collectionOfIsbns\":[{\"isbn\":\"9781449325862\"},{\"isbn\":\"9781449337711\"}]}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:26 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://demoqa.com/BookStore/v1/Books\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 73\n}\nBody: {\"collectionOfIsbns\":[{\"isbn\":\"9781449325862\"},{\"isbn\":\"9781449337711\"}]}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:26 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "8ef63590-e2e6-4432-9104-a828382c03d0",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get - Book",
+              "fullTitle": "Account API Get - Book",
+              "timedOut": null,
+              "duration": 126,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"GET\",\n  url: \"/BookStore/v1/Book\",\n  qs: {\n    ISBN: book2\n  }\n}).then((response) => {\n  expect(response.status).to.have.eq(200);\n  const validate = ajv.compile(schemaBook);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Book?ISBN=9781449331818\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://demoqa.com/BookStore/v1/Book?ISBN=9781449331818\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:26 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Book?ISBN=9781449331818\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://demoqa.com/BookStore/v1/Book?ISBN=9781449331818\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:26 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "c6ec55d3-de26-4894-a8eb-982163e9af04",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT - book user",
+              "fullTitle": "Account API PUT - book user",
+              "timedOut": null,
+              "duration": 125,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"PUT\",\n  url: `/BookStore/v1/Books/${book}`,\n  auth: {\n    user: userName,\n    pass: userPass\n  },\n  body: {\n    userId: userID,\n    isbn: book2\n  }\n}).then((response) => {\n  expect(response.status).is.eq(200);\n  const validate = ajv.compile(schemaUser);\n  const valid = validate(response.body);\n  expect(valid, \"schema valid?\").to.be.true;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books/9781449325862\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://demoqa.com/BookStore/v1/Books/9781449325862\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 24\n}\nBody: {\"isbn\":\"9781449331818\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:27 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books/9781449325862\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://demoqa.com/BookStore/v1/Books/9781449325862\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 24\n}\nBody: {\"isbn\":\"9781449331818\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:27 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "affef5a0-815b-452d-834c-e009d18c7b63",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE - book",
+              "fullTitle": "Account API DELETE - book",
+              "timedOut": null,
+              "duration": 126,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"DELETE\",\n  url: \"/BookStore/v1/Book\",\n  auth: {\n    user: userName,\n    pass: userPass\n  },\n  body: {\n    userId: userID,\n    isbn: book2\n  }\n}).then((response) => {\n  expect(response.status).to.have.eq(204);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Book\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/BookStore/v1/Book\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 24\n}\nBody: {\"isbn\":\"9781449331818\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:27 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Book\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/BookStore/v1/Book\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 24\n}\nBody: {\"isbn\":\"9781449331818\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:27 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "2fe06d1f-dba6-44bd-9923-a9a6a5926d7a",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE - books",
+              "fullTitle": "Account API DELETE - books",
+              "timedOut": null,
+              "duration": 132,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"DELETE\",\n  url: \"/BookStore/v1/Books\",\n  qs: {\n    UserId: userID\n  },\n  auth: {\n    user: userName,\n    pass: userPass\n  }\n}).then((response) => {\n  expect(response.status).to.have.eq(204);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books?UserId=\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/BookStore/v1/Books?UserId=\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:28 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/BookStore/v1/Books?UserId=\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/BookStore/v1/Books?UserId=\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Basic ZGFuaWVsZmFyaWFzNzpBejI1Mjg4MzEwNDBA\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:28 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "b0e33f76-b363-4088-8384-616bc72798ff",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE - User",
+              "fullTitle": "Account API DELETE - User",
+              "timedOut": null,
+              "duration": 132,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"DELETE\",\n  url: `/Account/v1/User/${userID}`,\n  headers: {\n    \"Authorization\": `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\n  }\n}).then((response) => {\n  expect(response.status).to.have.eq(204);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User/undefined\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/Account/v1/User/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImRhbmllbGZhcmlhczciLCJwYXNzd29yZCI6IkF6MjUyODgzMTA0MEAiLCJpYXQiOjE3MzEyNDIxODR9.vmJVEpI9OOTQHyTC_fRAeh2FKb3E3B_bz-KGwNtL7WM\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:28 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://demoqa.com/Account/v1/User/undefined\n\nThe response we received from your web server was:\n\n  > 502: Bad Gateway\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://demoqa.com/Account/v1/User/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImRhbmllbGZhcmlhczciLCJwYXNzd29yZCI6IkF6MjUyODgzMTA0MEAiLCJpYXQiOjE3MzEyNDIxODR9.vmJVEpI9OOTQHyTC_fRAeh2FKb3E3B_bz-KGwNtL7WM\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/130.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 502 - Bad Gateway\nHeaders: {\n  \"server\": \"nginx/1.17.10 (Ubuntu)\",\n  \"date\": \"Sun, 10 Nov 2024 12:36:28 GMT\",\n  \"content-type\": \"text/html\",\n  \"content-length\": \"569\",\n  \"connection\": \"keep-alive\"\n}\nBody: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.17.10 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demoqa.com/__cypress/runner/cypress_runner.js:133013:72)\n    at tryCatcher (https://demoqa.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demoqa.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demoqa.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demoqa.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demoqa.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://demoqa.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demoqa.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demoqa.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at ee (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40763:92)\n    at Context.eval (https://demoqa.com/__cypress/tests?p=cypress/support/e2e.js:40769:87)",
+                "diff": null
+              },
+              "uuid": "7519951c-4d9e-4761-a4a6-87a1a9282bb5",
+              "parentUUID": "03f1e8f4-927e-44e4-9c92-227a5d8ef688",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "06c8a86c-b45b-498c-a3b5-0f7eabcf43e5",
+            "bafca794-137f-447d-8b25-6618fdb976ff",
+            "1e7b5795-2258-456e-acba-43fdc034aff0"
+          ],
+          "failures": [
+            "520784c4-8fde-4220-8ca0-2ce4bce66636",
+            "df5fd49f-86c1-4163-998d-bc992379e2ee",
+            "8ef63590-e2e6-4432-9104-a828382c03d0",
+            "c6ec55d3-de26-4894-a8eb-982163e9af04",
+            "affef5a0-815b-452d-834c-e009d18c7b63",
+            "2fe06d1f-dba6-44bd-9923-a9a6a5926d7a",
+            "b0e33f76-b363-4088-8384-616bc72798ff",
+            "7519951c-4d9e-4761-a4a6-87a1a9282bb5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1925,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "demoQA",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
